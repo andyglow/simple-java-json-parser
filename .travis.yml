@@ -10,6 +10,5 @@ cache:
  directories:
    - $HOME/.m2
 
-# script: sbt ++$TRAVIS_SCALA_VERSION clean coverage test
-
-# after_success: sbt ++$TRAVIS_SCALA_VERSION coverageReport coverageAggregate coveralls
+after_success:
+  - mvn -DrepoToken= clean cobertura:cobertura coveralls:report
